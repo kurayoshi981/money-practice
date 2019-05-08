@@ -1,7 +1,7 @@
 class ProductController < ApplicationController
   def index
     @product = Product.all
-    
+
   end
 
   def new
@@ -20,7 +20,7 @@ class ProductController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :price, :stock).merge(user: current_user)
+    params.require(:product).permit(:name, :description, :price, :stock, :image).merge(user: current_user)
   end
 
 end

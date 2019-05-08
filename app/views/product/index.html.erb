@@ -2,7 +2,9 @@
     <div class="row">
         <div class="card" style="width: 18rem;">
             <% @product.each do |product| %>
-            <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+            <% if product.image.present? %>
+                <%= image_tag product.image_url  %>
+            <% end %>
             <div class="card-body">
                 <h5 class="card-title"><%= product.name %></h5>
                 <p class="card-text"><%= product.description %></p>
